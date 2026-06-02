@@ -1,0 +1,494 @@
+******************************************************************************
+                  TI ARM Linker PC v20.2.7                     
+******************************************************************************
+>> Linked Sun May 24 16:21:29 2026
+
+OUTPUT FILE NAME:   <Piano1.0.out>
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 000025c1
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00100000  00002b43  000fd4bd  R  X
+  SRAM                  20000000   00040000  000002d4  0003fd2c  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00002b48   00002b48    r-x
+  00000000    00000000    00000208   00000208    r-- .intvecs
+  00000208    00000208    0000241a   0000241a    r-x .text
+  00002624    00002624    000004c9   000004c9    r-- .const
+  00002af0    00002af0    00000058   00000058    r-- .cinit
+20000000    20000000    000002d4   00000000    rw-
+  20000000    20000000    00000200   00000000    rw- .stack
+  20000200    20000200    000000d4   00000000    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    00000208     
+                  00000000    00000208     tm4c1294ncpdt_startup_ccs.obj (.intvecs)
+
+.text      0    00000208    0000241a     
+                  00000208    00000714     OLED.obj (.text)
+                  0000091c    00000538     UART.obj (.text)
+                  00000e54    00000398     ADC.obj (.text)
+                  000011ec    00000340     GPIO.obj (.text)
+                  0000152c    000002a0     Melody.obj (.text)
+                  000017cc    00000274     Audio.obj (.text)
+                  00001a40    00000268     PianoApp.obj (.text)
+                  00001ca8    00000248     Buttons.obj (.text)
+                  00001ef0    00000234     I2C.obj (.text)
+                  00002124    0000010c     Chords.obj (.text)
+                  00002230    000000bc     Notes.obj (.text)
+                  000022ec    000000a4     GPTM.obj (.text)
+                  00002390    0000009c     Clock.obj (.text)
+                  0000242c    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
+                  000024c8    00000068                                   : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  00002530    0000004c     Systick.obj (.text)
+                  0000257c    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  000025c0    00000034                                   : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  000025f4    0000000e                                   : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  00002602    0000000c     main.obj (.text)
+                  0000260e    0000000c     tm4c1294ncpdt_startup_ccs.obj (.text)
+                  0000261a    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  0000261e    00000004                                   : exit.c.obj (.text:abort:abort)
+
+.const     0    00002624    000004c9     
+                  00002624    00000190     Melody.obj (.const:melody_3)
+                  000027b4    00000140     Melody.obj (.const:melody_2)
+                  000028f4    000000f0     Melody.obj (.const:melody_1)
+                  000029e4    00000030     Audio.obj (.const:channel_limits)
+                  00002a14    0000000c     PianoApp.obj (.const:.string)
+                  00002a20    00000005     OLED.obj (.const:.string:font_0)
+                  00002a25    00000005     OLED.obj (.const:.string:font_1)
+                  00002a2a    00000005     OLED.obj (.const:.string:font_2)
+                  00002a2f    00000005     OLED.obj (.const:.string:font_3)
+                  00002a34    00000005     OLED.obj (.const:.string:font_4)
+                  00002a39    00000005     OLED.obj (.const:.string:font_5)
+                  00002a3e    00000005     OLED.obj (.const:.string:font_6)
+                  00002a43    00000005     OLED.obj (.const:.string:font_7)
+                  00002a48    00000005     OLED.obj (.const:.string:font_8)
+                  00002a4d    00000005     OLED.obj (.const:.string:font_9)
+                  00002a52    00000005     OLED.obj (.const:.string:font_A)
+                  00002a57    00000005     OLED.obj (.const:.string:font_B)
+                  00002a5c    00000005     OLED.obj (.const:.string:font_C)
+                  00002a61    00000005     OLED.obj (.const:.string:font_D)
+                  00002a66    00000005     OLED.obj (.const:.string:font_E)
+                  00002a6b    00000005     OLED.obj (.const:.string:font_F)
+                  00002a70    00000005     OLED.obj (.const:.string:font_G)
+                  00002a75    00000005     OLED.obj (.const:.string:font_H)
+                  00002a7a    00000005     OLED.obj (.const:.string:font_I)
+                  00002a7f    00000005     OLED.obj (.const:.string:font_J)
+                  00002a84    00000005     OLED.obj (.const:.string:font_K)
+                  00002a89    00000005     OLED.obj (.const:.string:font_L)
+                  00002a8e    00000005     OLED.obj (.const:.string:font_M)
+                  00002a93    00000005     OLED.obj (.const:.string:font_N)
+                  00002a98    00000005     OLED.obj (.const:.string:font_O)
+                  00002a9d    00000005     OLED.obj (.const:.string:font_P)
+                  00002aa2    00000005     OLED.obj (.const:.string:font_Q)
+                  00002aa7    00000005     OLED.obj (.const:.string:font_R)
+                  00002aac    00000005     OLED.obj (.const:.string:font_S)
+                  00002ab1    00000005     OLED.obj (.const:.string:font_T)
+                  00002ab6    00000005     OLED.obj (.const:.string:font_U)
+                  00002abb    00000005     OLED.obj (.const:.string:font_V)
+                  00002ac0    00000005     OLED.obj (.const:.string:font_W)
+                  00002ac5    00000005     OLED.obj (.const:.string:font_X)
+                  00002aca    00000005     OLED.obj (.const:.string:font_Y)
+                  00002acf    00000005     OLED.obj (.const:.string:font_Z)
+                  00002ad4    00000005     OLED.obj (.const:.string:font_colon)
+                  00002ad9    00000005     OLED.obj (.const:.string:font_dash)
+                  00002ade    00000005     OLED.obj (.const:.string:font_hash)
+                  00002ae3    00000005     OLED.obj (.const:.string:font_percent)
+                  00002ae8    00000005     OLED.obj (.const:.string:font_space)
+
+.cinit     0    00002af0    00000058     
+                  00002af0    00000045     (.cinit..data.load) [load image, compression = lzss]
+                  00002b35    00000003     --HOLE-- [fill = 0]
+                  00002b38    00000008     (__TI_handler_table)
+                  00002b40    00000008     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.data      0    20000200    000000d4     UNINITIALIZED
+                  20000200    00000030     Audio.obj (.data:channel_counters)
+                  20000230    00000024     ADC.obj (.data)
+                  20000254    0000001e     PianoApp.obj (.data)
+                  20000272    00000002     Chords.obj (.data)
+                  20000274    0000001d     Melody.obj (.data)
+                  20000291    00000001     OLED.obj (.data)
+                  20000292    00000002     --HOLE--
+                  20000294    00000010     UART.obj (.data)
+                  200002a4    0000000e     Buttons.obj (.data)
+                  200002b2    00000002     --HOLE--
+                  200002b4    0000000b     I2C.obj (.data)
+                  200002bf    00000001     --HOLE--
+                  200002c0    00000008     Clock.obj (.data)
+                  200002c8    00000006     Audio.obj (.data)
+                  200002ce    00000002     --HOLE--
+                  200002d0    00000004     Systick.obj (.data)
+
+.stack     0    20000000    00000200     UNINITIALIZED
+                  20000000    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  20000004    000001fc     --HOLE--
+
+__llvm_prf_cnts 
+*          0    20000000    00000000     UNINITIALIZED
+
+MODULE SUMMARY
+
+       Module                          code   ro data   rw data
+       ------                          ----   -------   -------
+    .\
+       OLED.obj                        1812   205       1      
+       Melody.obj                      672    960       29     
+       UART.obj                        1336   0         16     
+       ADC.obj                         920    0         36     
+       GPIO.obj                        832    0         0      
+       Audio.obj                       628    48        54     
+       PianoApp.obj                    616    12        30     
+       Buttons.obj                     584    0         14     
+       I2C.obj                         564    0         11     
+       tm4c1294ncpdt_startup_ccs.obj   12     520       0      
+       Chords.obj                      268    0         2      
+       Notes.obj                       188    0         0      
+       Clock.obj                       156    0         8      
+       GPTM.obj                        164    0         0      
+       Systick.obj                     76     0         4      
+       main.obj                        12     0         0      
+    +--+-------------------------------+------+---------+---------+
+       Total:                          8840   1745      205    
+                                                               
+    C:\ti\ccs1281\ccs\tools\compiler\ti-cgt-arm_20.2.7.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       memcpy_t2.asm.obj               156    0         0      
+       copy_decompress_lzss.c.obj      104    0         0      
+       autoinit.c.obj                  68     0         0      
+       boot_cortex_m.c.obj             52     0         0      
+       copy_decompress_none.c.obj      14     0         0      
+       exit.c.obj                      4      0         0      
+       pre_init.c.obj                  4      0         0      
+    +--+-------------------------------+------+---------+---------+
+       Total:                          402    0         0      
+                                                               
+       Stack:                          0      0         512    
+       Linker Generated:               0      85        0      
+    +--+-------------------------------+------+---------+---------+
+       Grand Total:                    9242   1830      717    
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00002b40 records: 1, size/record: 8, table size: 8
+	.data: load addr=00002af0, load size=00000045 bytes, run addr=20000200, run size=000000d4 bytes, compression=lzss
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00002b38 records: 2, size/record: 4, table size: 8
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                           
+-------   ----                           
+00000fb5  ADC0SS1_Handler                
+00001135  ADC_Joystick_GetOctave         
+0000112f  ADC_Joystick_GetVolumePercent  
+00000e55  ADC_Joystick_Init              
+00000f6d  ADC_Joystick_Tick1ms           
+00001839  Audio_GetActiveChannels        
+0000186f  Audio_GetOctave                
+00001897  Audio_GetVolumePercent         
+000017cd  Audio_Init                     
+00001819  Audio_SetActiveChannels        
+0000183f  Audio_SetOctave                
+00001875  Audio_SetVolumePercent         
+000019e7  Audio_StopAll                  
+000018e3  Audio_UpdateTick               
+00001e71  Buttons_GetStableMask          
+00001ca9  Buttons_Init                   
+00001e0f  Buttons_UpdateDebounce         
+0000261f  C$$EXIT                        
+00002125  Chords_Detect                  
+00002391  Clock_Init120MHz               
+00001371  GPIO_Buttons_ReadRawPressedMask
+00001441  GPIO_Buzzer_Toggle             
+000013cf  GPIO_Buzzer_Write              
+0000148b  GPIO_Buzzers_OffAll            
+000011ed  GPIO_Piano_Init                
+000022ed  GPTM0A_Audio_Init              
+00001f55  I2C0_Init                      
+000020b5  I2C0_Probe                     
+00002057  I2C0_Write2Bytes               
+0000201b  I2C0_WriteByte                 
+000016fb  Melody_CheckSecretCombination  
+000016c1  Melody_GetCurrentChannels      
+0000152d  Melody_Init                    
+000016bb  Melody_IsPlaying               
+0000157d  Melody_Start                   
+0000160f  Melody_Stop                    
+0000164d  Melody_Update1ms               
+00002231  Notes_GetNameFromChannel       
+0000033b  OLED_Clear                     
+00000277  OLED_Init                      
+00000335  OLED_IsReady                   
+00000641  OLED_Print                     
+000007b9  OLED_PrintNotes                
+00000665  OLED_PrintUInt                 
+000003f3  OLED_SetCursor                 
+00000861  OLED_ShowPianoStatus           
+00001a41  PianoApp_Init                  
+00001a8d  PianoApp_Update                
+0000260f  ResetISR                       
+0000254b  SysTick_GetMs                  
+00002551  SysTick_Handler                
+00002531  SysTick_Init                   
+00002359  Timer0A_Handler                
+00000bcd  UART4_Handler                  
+0000091d  UART4_Init                     
+00000a13  UART4_SendChar                 
+00000cc9  UART4_SendHelp                 
+00000ad3  UART4_SendNotes                
+00000cf7  UART4_SendPianoStatus          
+00000a37  UART4_SendString               
+00000a55  UART4_SendUInt                 
+00000c19  UART4_TakeHelpRequest          
+00000c4d  UART4_TakeMelodyRequest        
+00000bff  UART4_TakeStatusRequest        
+00000c7d  UART4_TakeStopRequest          
+20000200  __STACK_END                    
+00000200  __STACK_SIZE                   
+20000200  __STACK_TOP                    
+00002b40  __TI_CINIT_Base                
+00002b48  __TI_CINIT_Limit               
+00002b38  __TI_Handler_Table_Base        
+00002b40  __TI_Handler_Table_Limit       
+0000257d  __TI_auto_init_nobinit_nopinit 
+000024c9  __TI_decompress_lzss           
+000025f5  __TI_decompress_none           
+ffffffff  __TI_pprof_out_hndl            
+ffffffff  __TI_prof_data_size            
+ffffffff  __TI_prof_data_start           
+00000000  __TI_static_base__             
+0000242d  __aeabi_memcpy                 
+0000242d  __aeabi_memcpy4                
+0000242d  __aeabi_memcpy8                
+ffffffff  __binit__                      
+ffffffff  __c_args__                     
+UNDEFED   __mpu_init                     
+20000000  __stack                        
+20000000  __start___llvm_prf_cnts        
+20000000  __stop___llvm_prf_cnts         
+000025c1  _c_int00_noargs                
+UNDEFED   _system_post_cinit             
+0000261b  _system_pre_init               
+0000261f  abort                          
+2000024c  adc_actss_debug                
+20000240  adc_isr_counter_debug          
+2000023d  adc_octave_debug               
+20000248  adc_ris_debug                  
+20000250  adc_ssfstat_debug              
+20000244  adc_start_counter_debug        
+2000023c  adc_volume_debug               
+20000238  adc_x_debug                    
+2000023e  adc_x_ready_debug              
+2000023a  adc_y_debug                    
+2000023f  adc_y_ready_debug              
+200002ca  audio_active_debug             
+200002cc  audio_octave_debug             
+200002cd  audio_volume_debug             
+ffffffff  binit                          
+200002b0  buttons_debounce_counter_debug 
+200002ae  buttons_last_raw_debug         
+200002aa  buttons_raw_debug              
+200002ac  buttons_stable_debug           
+20000272  chord_mask_debug               
+00000000  g_pfnVectors                   
+200002b4  i2c_error_debug                
+200002bc  i2c_last_mcs_debug             
+200002bd  i2c_probe_3c_debug             
+200002be  i2c_probe_3d_debug             
+200002b8  i2c_timeout_debug              
+00002603  main                           
+20000276  melody_channels_debug          
+20000275  melody_id_debug                
+20000278  melody_index_debug             
+20000274  melody_playing_debug           
+0000242d  memcpy                         
+20000291  oled_ready_debug               
+20000260  piano_chord_debug              
+20000254  piano_notes_debug              
+2000025d  piano_octave_debug             
+20000256  piano_output_debug             
+20000258  piano_update_counter           
+2000025c  piano_volume_debug             
+200002c4  pll_lock_debug                 
+200002c0  system_clock_debug             
+200002d0  systick_ms                     
+200002a1  uart_help_request_debug        
+20000294  uart_last_char_debug           
+200002a2  uart_melody_request_debug      
+20000298  uart_rx_counter_debug          
+200002a0  uart_status_request_debug      
+200002a3  uart_stop_request_debug        
+2000029c  uart_tx_counter_debug          
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                           
+-------   ----                           
+00000000  __TI_static_base__             
+00000000  g_pfnVectors                   
+00000200  __STACK_SIZE                   
+00000277  OLED_Init                      
+00000335  OLED_IsReady                   
+0000033b  OLED_Clear                     
+000003f3  OLED_SetCursor                 
+00000641  OLED_Print                     
+00000665  OLED_PrintUInt                 
+000007b9  OLED_PrintNotes                
+00000861  OLED_ShowPianoStatus           
+0000091d  UART4_Init                     
+00000a13  UART4_SendChar                 
+00000a37  UART4_SendString               
+00000a55  UART4_SendUInt                 
+00000ad3  UART4_SendNotes                
+00000bcd  UART4_Handler                  
+00000bff  UART4_TakeStatusRequest        
+00000c19  UART4_TakeHelpRequest          
+00000c4d  UART4_TakeMelodyRequest        
+00000c7d  UART4_TakeStopRequest          
+00000cc9  UART4_SendHelp                 
+00000cf7  UART4_SendPianoStatus          
+00000e55  ADC_Joystick_Init              
+00000f6d  ADC_Joystick_Tick1ms           
+00000fb5  ADC0SS1_Handler                
+0000112f  ADC_Joystick_GetVolumePercent  
+00001135  ADC_Joystick_GetOctave         
+000011ed  GPIO_Piano_Init                
+00001371  GPIO_Buttons_ReadRawPressedMask
+000013cf  GPIO_Buzzer_Write              
+00001441  GPIO_Buzzer_Toggle             
+0000148b  GPIO_Buzzers_OffAll            
+0000152d  Melody_Init                    
+0000157d  Melody_Start                   
+0000160f  Melody_Stop                    
+0000164d  Melody_Update1ms               
+000016bb  Melody_IsPlaying               
+000016c1  Melody_GetCurrentChannels      
+000016fb  Melody_CheckSecretCombination  
+000017cd  Audio_Init                     
+00001819  Audio_SetActiveChannels        
+00001839  Audio_GetActiveChannels        
+0000183f  Audio_SetOctave                
+0000186f  Audio_GetOctave                
+00001875  Audio_SetVolumePercent         
+00001897  Audio_GetVolumePercent         
+000018e3  Audio_UpdateTick               
+000019e7  Audio_StopAll                  
+00001a41  PianoApp_Init                  
+00001a8d  PianoApp_Update                
+00001ca9  Buttons_Init                   
+00001e0f  Buttons_UpdateDebounce         
+00001e71  Buttons_GetStableMask          
+00001f55  I2C0_Init                      
+0000201b  I2C0_WriteByte                 
+00002057  I2C0_Write2Bytes               
+000020b5  I2C0_Probe                     
+00002125  Chords_Detect                  
+00002231  Notes_GetNameFromChannel       
+000022ed  GPTM0A_Audio_Init              
+00002359  Timer0A_Handler                
+00002391  Clock_Init120MHz               
+0000242d  __aeabi_memcpy                 
+0000242d  __aeabi_memcpy4                
+0000242d  __aeabi_memcpy8                
+0000242d  memcpy                         
+000024c9  __TI_decompress_lzss           
+00002531  SysTick_Init                   
+0000254b  SysTick_GetMs                  
+00002551  SysTick_Handler                
+0000257d  __TI_auto_init_nobinit_nopinit 
+000025c1  _c_int00_noargs                
+000025f5  __TI_decompress_none           
+00002603  main                           
+0000260f  ResetISR                       
+0000261b  _system_pre_init               
+0000261f  C$$EXIT                        
+0000261f  abort                          
+00002b38  __TI_Handler_Table_Base        
+00002b40  __TI_CINIT_Base                
+00002b40  __TI_Handler_Table_Limit       
+00002b48  __TI_CINIT_Limit               
+20000000  __stack                        
+20000000  __start___llvm_prf_cnts        
+20000000  __stop___llvm_prf_cnts         
+20000200  __STACK_END                    
+20000200  __STACK_TOP                    
+20000238  adc_x_debug                    
+2000023a  adc_y_debug                    
+2000023c  adc_volume_debug               
+2000023d  adc_octave_debug               
+2000023e  adc_x_ready_debug              
+2000023f  adc_y_ready_debug              
+20000240  adc_isr_counter_debug          
+20000244  adc_start_counter_debug        
+20000248  adc_ris_debug                  
+2000024c  adc_actss_debug                
+20000250  adc_ssfstat_debug              
+20000254  piano_notes_debug              
+20000256  piano_output_debug             
+20000258  piano_update_counter           
+2000025c  piano_volume_debug             
+2000025d  piano_octave_debug             
+20000260  piano_chord_debug              
+20000272  chord_mask_debug               
+20000274  melody_playing_debug           
+20000275  melody_id_debug                
+20000276  melody_channels_debug          
+20000278  melody_index_debug             
+20000291  oled_ready_debug               
+20000294  uart_last_char_debug           
+20000298  uart_rx_counter_debug          
+2000029c  uart_tx_counter_debug          
+200002a0  uart_status_request_debug      
+200002a1  uart_help_request_debug        
+200002a2  uart_melody_request_debug      
+200002a3  uart_stop_request_debug        
+200002aa  buttons_raw_debug              
+200002ac  buttons_stable_debug           
+200002ae  buttons_last_raw_debug         
+200002b0  buttons_debounce_counter_debug 
+200002b4  i2c_error_debug                
+200002b8  i2c_timeout_debug              
+200002bc  i2c_last_mcs_debug             
+200002bd  i2c_probe_3c_debug             
+200002be  i2c_probe_3d_debug             
+200002c0  system_clock_debug             
+200002c4  pll_lock_debug                 
+200002ca  audio_active_debug             
+200002cc  audio_octave_debug             
+200002cd  audio_volume_debug             
+200002d0  systick_ms                     
+ffffffff  __TI_pprof_out_hndl            
+ffffffff  __TI_prof_data_size            
+ffffffff  __TI_prof_data_start           
+ffffffff  __binit__                      
+ffffffff  __c_args__                     
+ffffffff  binit                          
+UNDEFED   __mpu_init                     
+UNDEFED   _system_post_cinit             
+
+[141 symbols]
