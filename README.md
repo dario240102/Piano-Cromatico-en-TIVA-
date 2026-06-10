@@ -106,4 +106,4 @@ La afinación de las notas se realizó modificando manualmente los límites de c
 ## Autor
 Darío Rodríguez Pedroche
 
-Proyecto desarrollado como práctica/proyecto final de la asignatura de Microprocesadores y Microcontroladores, Facultad de Ingeniería, UNAM.
+Proyecto desarrollado como proyecto final de la asignatura de Microprocesadores y Microcontroladores, Facultad de Ingeniería, UNAM.
